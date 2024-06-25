@@ -1,3 +1,5 @@
+import random
+
 def subset_sum(arr, target_sum):
     arr_len = len(arr)
 
@@ -70,6 +72,11 @@ def closest_subset_sum(arr, target_sum):
 
     return best_sum, result
 
+def random_subset(arr):
+    random_subset = [x for x in arr if random.choice([True, False])]
+    return random_subset
+
+
 # przykładowe użycie:
 # arr = [3, 4, 6, 10]
 # target_sum = 12
@@ -81,9 +88,11 @@ arr = [int(item) for item in arr]
 target_sum = int(input("Target: "))
 
 is_sum_possible, result = subset_sum(arr, target_sum)
+random_subset = random_subset(arr)
 print(f"Czy suma {target_sum} jest osiągalna: {is_sum_possible}")
 if is_sum_possible:
     print(f"Elementy: {result}")
 else:
     best_sum, elements = closest_subset_sum(arr, target_sum)
     print(f"Najbliższa suma: {best_sum}, Elementy tworzące tę sumę: {elements}")
+print(f"Losowy zbiór: {random_subset}, suma: {sum(random_subset)}")
