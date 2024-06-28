@@ -77,7 +77,7 @@ def random_subset(arr):
     return random_subset
 
 
-# przykładowe użycie:
+# przykładowe użycie
 # arr = [3, 4, 6, 10]
 # target_sum = 12
 
